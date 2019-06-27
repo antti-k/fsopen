@@ -1,0 +1,25 @@
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin-->selain: HTML-koodi
+
+note over selain:
+Haetaan tarvittavat main.css ja spa.js
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+palvelin-->selain: main.css
+palvelin-->selain: spa.js
+
+note over selain:
+Aloitetaan spa.js suorittaminen
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+note over selain:
+Muodostetaan DOM ilman listaa ja renderöidää sivu
+end note
+palvelin-->selain: data.json
+note over selain:
+Lisätään lista DOM:n ja renderöidään sivu uudelleen
+end note
+

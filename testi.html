@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<script type='text/javascript'>
+			console.log('Js from head');
+			const p1 = document.createElement('p')
+			p1.innerHTML = 'Js from head'
+			// document.getElementById('mydiv').appendChild(p1)
+			setTimeout(_ => document.getElementById('mydiv').appendChild(p1), 100)
+			console.log('Js from head done')
+		</script>
+	</head>
+	<body>
+		<script>
+			console.log('Js start of body');
+			const p2 = document.createElement('p')
+			p2.innerHTML = 'Js start of body'
+			// document.getElementById('mydiv').appendChild(p2)
+			setTimeout(_ => document.getElementById('mydiv').appendChild(p2), 50)
+			console.log('Js start of body done')
+		</script>
+		<div id='mydiv'>
+		</div>
+		<script>
+			console.log('Js end of body');
+			const p3 = document.createElement('p')
+			p3.innerHTML = 'Js end of body'
+			document.getElementById('mydiv').appendChild(p3)
+			console.log('Js end of body done')
+		</script>
+	</body>
+</html>

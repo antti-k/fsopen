@@ -1,0 +1,10 @@
+note over selain:
+Lisätään notes listaan uusi note, tyhjennetään
+tekstikenttä, muodostetaan notes DOM uudellee,
+renderöidään sivu uudelleen ja lähetetään uusi note
+palvelimelle
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+palvelin-->selain: {message: "note created"}
+

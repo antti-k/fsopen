@@ -1,0 +1,31 @@
+note over selain:
+Selain lähettää lomakkeen
+sisällön palvelimelle
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+palvelin-->selain: HTTP 302 Kehotus ladata sivu uudelleen
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+palvelin-->selain: HTML-koodi
+
+note over selain:
+Haetaan tarvittavat main.css ja main.js
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+palvelin-->selain: main.css
+palvelin-->selain: main.js
+
+note over selain:
+Aloitetaan main.js suorittaminen
+end note
+
+selain->palvelin: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+note over selain:
+Muodostetaan DOM ilman listaa ja renderöidää sivu
+end note
+palvelin-->selain: data.json
+note over selain:
+Lisätään lista DOM:n ja renderöidään sivu uudelleen
+end note
