@@ -4,48 +4,8 @@ import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
 import personService from './services/persons'
-
-const SuccessNotification = ({ message }) => {
-	const style = {
-		color: 'green',
-		background: 'lightgrey',
-		fontSize: '20px',
-		borderStyle: 'solid',
-		borderRadius: '5px',
-		padding: '10px',
-		marginBottom: '20px'
-	}
-
-	if (message === null) {
-		return null
-	}
-	return (
-		<div style={style}>
-			{message}
-		</div>
-	)
-}
-
-const ErrorNotification  = ({ message }) => {
-	const style = {
-		color: 'red',
-		background: 'lightgrey',
-		fontSize: '20px',
-		borderStyle: 'solid',
-		borderRadius: '5px',
-		padding: '10px',
-		marginBottom: '20px'
-	}
-
-	if (message === null) {
-		return null
-	}
-	return (
-		<div style={style}>
-			{message}
-		</div>
-	)
-}
+import SuccessNotification from './components/SuccessNotification'
+import ErrorNotification from './components/ErrorNotification'
 
 const App = () => {
 	const [ persons, setPersons ] = useState([])
