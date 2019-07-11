@@ -46,6 +46,8 @@ const App = () => {
 					number: newNumber
 				}
 				const currentPerson = persons.find(person => person.name === newName)
+				console.log({personObject})
+				console.log({currentPerson})
 				const { id } = currentPerson
 				personService
 					.update(id, personObject)
