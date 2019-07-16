@@ -57,7 +57,7 @@ const App = () => {
 						setNewNumber('')
 						notify(`Updated number of ${newName}`)
 					})
-					.catch(error => errorNotify(`Information of ${currentPerson.name} has already been removed from server`))
+				.catch(error => errorNotify(`Information of ${currentPerson.name} has already been removed from server`))
 			}
 		} else {
 			const personObject = {
@@ -71,6 +71,9 @@ const App = () => {
 					setNewName('')
 					setNewNumber('')
 					notify(`Added ${newName}`)
+				})
+				.catch(error => {
+					errorNotify(error.response.data.error)
 				})
 		}
 	}
