@@ -9,14 +9,21 @@ usersRouter.get('/', async (request, response) => {
 })
 
 usersRouter.post('/', async (request, response, next) => {
-	console.log(require.body)
 	try {
 		const { username, name, password } = request.body
 
-		console.log({ password })
+		if (password.length < 3) {
+			return response.status(400).json({ error: 'Password is too short' })
+		}
+
+		const users = await User.find({ username })
+
+		if (users.length > 0) {
+			return response.status(400).json({ error: 'Username is already in use' })
+		}
+
 		const saltRounds = 10
 		const passwordHash = await bcrypt.hash(password, saltRounds)
-		console.log({passwordHash})
 
 		const user = new User({
 			username,
